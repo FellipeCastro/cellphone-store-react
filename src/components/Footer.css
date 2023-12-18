@@ -27,3 +27,18 @@
     justify-content: center;
     align-items: center;
 }
+
+.social-list li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .social-list {
+        align-items: center;
+    }
+}

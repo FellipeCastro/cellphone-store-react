@@ -10,18 +10,26 @@ function App() {
   const [cells, setCells] = useState([])
   const [cart, setCart] = useState([])
   const [cartIsOpen, setCartIsOpen] = useState(false)
+  const [total, setTotal] = useState(0)
 
   const addOnCart = (cell) => {
     setCart((prevCart) => [...prevCart, cell])
+    addTotal()
   }
 
   const removeToCart = (cellId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== cellId))
+    addTotal()
   }
 
   const toggleCart = () => {
     setCartIsOpen(!cartIsOpen)
   }
+
+  useEffect(() => {
+    const newTotal = cart.reduce((acc, item) => acc + item.price, 0)
+    setTotal(newTotal)
+  }, [cart])
 
   useEffect(() => {
     fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular/')
@@ -31,15 +39,14 @@ function App() {
     })
     .catch((err) => console.log(err))
   }, [])
-  
-
 
   return (
     <>
       <Header 
         toggleCart={toggleCart}
+        cartIsOpen={cartIsOpen}
+        items={cart.length}
       />
-
 
       <div className='container'>
         <div className="card-container">
@@ -59,6 +66,7 @@ function App() {
           <Cart 
             cell={cart}
             removeToCart={removeToCart}
+            total={total}
           />
         )}
 

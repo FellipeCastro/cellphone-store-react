@@ -2,7 +2,7 @@ import {  BsFillCartDashFill  } from "react-icons/bs"
 
 import './Cart.css'
 
-export default function Cart({cell, removeToCart}) {
+export default function Cart({cell, removeToCart, total}) {
     return (
         <div className="cart">
             {cell.length > 0 ? (
@@ -24,7 +24,10 @@ export default function Cart({cell, removeToCart}) {
                 <p className="empty-cart">Seu carrinho esta vazio!</p>
             )}
 
-            <button className="buy-btn">Comprar</button>
+            <div className="total-container">
+                <p>Total: R$ {total.toFixed(2)}</p>
+                <button className="buy-btn">Comprar</button>
+            </div>
         </div>
     )
 }

@@ -19,9 +19,25 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    position: relative;
 }
 
 .header button svg {
     color: var(--contrast-color);
     font-size: 2em;
+}
+
+.couter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--contrast-color);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    font-weight: 800;
 }
