@@ -3,21 +3,24 @@ import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CellCard from './components/CellCard'
+import Cart from './components/Cart'
 
 function App() {
 
   const [cells, setCells] = useState([])
   const [cart, setCart] = useState([])
-  const [isOnCart, setIsOnCart] = useState(false)
+  const [cartIsOpen, setCartIsOpen] = useState(false)
 
   const addOnCart = (cell) => {
     setCart((prevCart) => [...prevCart, cell])
-    console.log(cart)
   }
 
   const removeToCart = (cellId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== cellId))
-    console.log(cart)
+  }
+
+  const toggleCart = () => {
+    setCartIsOpen(!cartIsOpen)
   }
 
   useEffect(() => {
@@ -33,7 +36,10 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header 
+        toggleCart={toggleCart}
+      />
+
 
       <div className='container'>
         <div className="card-container">
@@ -48,6 +54,14 @@ function App() {
             )
           })}
         </div>
+
+        {cartIsOpen && (
+          <Cart 
+            cell={cart}
+            removeToCart={removeToCart}
+          />
+        )}
+
       </div>
       
       <Footer />

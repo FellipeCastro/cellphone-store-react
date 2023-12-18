@@ -1,0 +1,85 @@
+.cart {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 1em;
+    margin: -4% 0 -10% 0;
+    background-color: var(--contrast-color);
+    padding: 2em 1em 6em 2em;
+    box-shadow: 0px 10px 10px #00000050;
+    position: relative;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container {
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.text-container h2 {
+    text-align: justify;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.text-container p {
+    color: var(--main-color);
+    font-weight: 800;
+}
+
+.remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;    
+}
+
+.remove-btn svg {
+    color: var(--main-color);
+    font-size: 1.5em;
+    transition: .2s;
+}
+.remove-btn:hover > svg {
+    color: var(--main-color-hover);
+}
+
+.buy-btn {
+    width: calc(100% - 2em);
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    padding: 1em;
+    color: var(--contrast-color);
+    font-size: 1.2em;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-end;
+    position: absolute;
+    bottom: 1em;
+    transition: .2s;
+}
+
+.buy-btn:hover {
+    background-color: var(--main-color-hover);
+}
+
+.empty-cart {
+    text-align: center;
+    color: var(--main-color);
+    font-weight: 800;
+}

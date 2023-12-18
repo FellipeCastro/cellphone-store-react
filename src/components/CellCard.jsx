@@ -1,4 +1,4 @@
-import { BsFillCartPlusFill, BsFillCartDashFill  } from "react-icons/bs";
+import { BsFillCartPlusFill, BsFillCartDashFill  } from "react-icons/bs"
 
 import './CellCard.css'
 
