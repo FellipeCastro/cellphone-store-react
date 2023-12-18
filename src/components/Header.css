@@ -1,0 +1,26 @@
+.header {
+    width: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    position: fixed;
+}
+
+.header h1 {
+    color: var(--contrast-color);
+    font-weight: 400;
+}
+
+.header button {
+    padding: 1em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header button svg {
+    color: var(--contrast-color);
+    font-size: 2em;
+}

@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #eee;
+  --contrast-color: #fff;
+  --text-color: #000;
+  --main-color: #F80032;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

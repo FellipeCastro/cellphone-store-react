@@ -1,0 +1,29 @@
+.footer {
+    width: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+}
+
+.footer h1 {
+    color: var(--contrast-color);
+    font-weight: 400;
+}
+
+.social-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .5em;
+}
+
+.social-list li a {
+    color: var(--contrast-color);
+    padding: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
