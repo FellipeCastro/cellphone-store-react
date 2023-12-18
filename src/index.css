@@ -2,7 +2,9 @@
   --bg-color: #eee;
   --contrast-color: #fff;
   --text-color: #000;
+  --border-color: #999;
   --main-color: #F80032;
+  --main-color-hover: #F8003299;
 }
 
 * {
