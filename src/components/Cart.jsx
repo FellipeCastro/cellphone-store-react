@@ -12,7 +12,7 @@ export default function Cart({cell, removeToCart, total}) {
                             <img src={cell.thumbnail} alt={cell.title} />   
                             <div className="text-container">
                                 <h2>{cell.title}</h2>
-                                <p>R$ {cell.price}</p>
+                                <p>R$ {cell.price.toFixed(2)}</p>
                             </div>
                             <button className="remove-btn" onClick={() => removeToCart(cell.id)}>
                                 <BsFillCartDashFill />

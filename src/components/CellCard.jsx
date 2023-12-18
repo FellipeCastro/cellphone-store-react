@@ -7,7 +7,7 @@ export default function Cellphones({cell, isOnCart, addOnCart, removeToCart}) {
         <div key={cell.id} className="card">
             <h2>{cell.title}</h2>
             <img src={cell.thumbnail} alt={cell.title} />            
-            <p>R$ {cell.price}</p>
+            <p>R$ {cell.price.toFixed(2)}</p>
 
             <button onClick={isOnCart ? removeToCart : addOnCart}>
                 {isOnCart ? <BsFillCartDashFill/> : <BsFillCartPlusFill/>}
