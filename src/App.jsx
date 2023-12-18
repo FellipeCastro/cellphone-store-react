@@ -7,6 +7,18 @@ import CellCard from './components/CellCard'
 function App() {
 
   const [cells, setCells] = useState([])
+  const [cart, setCart] = useState([])
+  const [isOnCart, setIsOnCart] = useState(false)
+
+  const addOnCart = (cell) => {
+    setCart((prevCart) => [...prevCart, cell])
+    console.log(cart)
+  }
+
+  const removeToCart = (cellId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== cellId))
+    console.log(cart)
+  }
 
   useEffect(() => {
     fetch('https://api.mercadolibre.com/sites/MLB/search?q=celular/')
@@ -29,6 +41,9 @@ function App() {
             return (
               <CellCard
                 cell={cell}
+                isOnCart={cart.some((item) => item.id === cell.id)}
+                addOnCart={() => addOnCart(cell)}
+                removeToCart={() => removeToCart(cell.id)}
               />
             )
           })}
